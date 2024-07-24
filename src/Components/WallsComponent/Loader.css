@@ -1,0 +1,171 @@
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  display: grid;
+  color: #000000;
+  background: radial-gradient(farthest-side, currentColor calc(100% - 6px),#0000 calc(100% - 5px) 0);
+  -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 13px),#000 calc(100% - 12px));
+  border-radius: 50%;
+  animation: l19 2s infinite linear;
+}
+.loader::before,
+.loader::after {    
+  content: "";
+  grid-area: 1/1;
+  background:
+    linear-gradient(currentColor 0 0) center,
+    linear-gradient(currentColor 0 0) center;
+  background-size: 100% 10px,10px 100%;
+  background-repeat: no-repeat;
+}
+.loader::after {
+   transform: rotate(45deg);
+}
+
+.loader-text{
+  display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 36px;
+}
+
+@keyframes l19 { 
+  100%{transform: rotate(1turn)}
+}
+
+@keyframes sp7 {
+
+  0%,
+  10% {
+    transform: scale(var(--s, 1)) translate(0, 0) rotate(0deg)
+  }
+
+  33% {
+    transform: scale(var(--s, 1)) translate(0, -20px) rotate(0deg)
+  }
+
+  66% {
+    transform: scale(var(--s, 1)) translate(10px, -20px) rotate(-90deg)
+  }
+
+  90%,
+  100% {
+    transform: scale(var(--s, 1)) translate(10px, -10px) rotate(-90deg)
+  }
+}
+
+.glow-on-hover {
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(100deg, #ffff, #122030, #ffff, #122030, #00ffd5, #002bff, #7a00ff, #122030, #ffff);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(3px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  opacity: 0.6; 
+  transition: opacity 0.1ms ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #42a0ec;
+}
+
+.glow-on-hover:active:before {
+  opacity: 0.8; 
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  opacity: 2;
+  border-radius: 10px;
+}
+
+
+.login-input {
+  line-height: 2.5 !important;
+  background-color: #122030 !important;
+  color: #ffffff !important;
+}
+
+.login-input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white !important;
+  opacity: 1;
+  /* Firefox */
+}
+
+.login-input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white !important;
+}
+
+.login-input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white !important;
+}
+
+.image-contain {
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  background-position: center;
+}
+
+.btn-2 {
+  background-color: #000;
+  color: #71ace7;
+  border: 1px solid #71ace7;
+  box-shadow:  0 0 5px #003972,  0 0 5px #71ace7 inset;
+}
+.btn-2:before {
+  height: 0%;
+  width: 2px;
+}
+.btn-2:hover {
+  color: #fff;
+  box-shadow: inset 0 0 10px #71ace7, 0 0 20px #71ace7 inset, 0 0 20px #71ace7 inset;
+}
+.custom-btn {
+  color: #fff;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
